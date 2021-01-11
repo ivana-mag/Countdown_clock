@@ -1,0 +1,71 @@
+body{
+    /* background-image: url(images/Tarantula\ nebula.jpg); */
+    background-color: #0a0a0a;
+    color: #eee;
+    font-family: monospace;
+   
+}
+
+#format{
+    position: relative;
+    top: 20px;
+    border:1px solid #eee;
+    width: 180px;
+    background-color: #000;
+    color:#eee;
+}
+
+.pulsing{
+    display: none;
+}
+
+.changeColor{
+    color: rgba(235, 14, 161, 0.849);
+}
+
+#container{
+    width: 400px;
+    height: 50px;
+}
+span#clock{
+    padding:10px;
+    font-weight: bold;
+    font-size: 36px;
+    width: 300px;
+}
+
+#countdown{
+    display: block;
+    align-items: center;
+    width: 100vw;
+    justify-content: center;
+}
+
+#countdown-msg, #theWeekend{
+    position: relative;
+    text-align: center;
+    margin:0 0 50px 0;
+    font-size: 42px;
+    font-weight: bold;
+
+}
+
+#countdown-clock{
+    position: relative;
+    text-align: center;
+    font-size: 65px;
+    font-weight: bold;
+    color:magenta;
+    margin:0 0 55px 0;
+
+}
+
+#submitDate{
+    border:none;
+    height:100px;
+    width: 100px;
+    border-radius: 50%;
+    background-color:magenta;
+    font-weight: bold;
+    margin-top:50px;
+}

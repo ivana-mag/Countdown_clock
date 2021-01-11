@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<script src="clockV3.js"></script>
+		<link rel="stylesheet" href="style-clock.css" />
+		<title>Ivanas Clock</title>
+	</head>
+
+	<body>
+		<div id="clockDiv">
+			<h1 id="dayOfWeek">Day</h1>
+			<h1 id="theDate">Date</h1>
+			<span id="clock">Time</span>
+			<div id="container">
+				<select id="format">
+					<option value="default">Select Format</option>
+					<option value="12">12 hour format</option>
+					<option value="24">24 hour format</option>
+				</select>
+			</div>
+		</div>
+		<div id="countdown">
+			<div id="countdown-msg">
+				<h3>Countdown to:</h3>
+				<input id="chooseDay" type="text" placeholder="Day" />
+				<input id="chooseMonth" type="text" placeholder="Month" />
+				<input id="chooseYear" type="text" placeholder="Year" /><br />
+				<button type="button" id="submitDate">Start countdown</button>
+			</div>
+			<div id="countdown-clock" style="display: none">Countdown clock</div>
+			<div id="theWeekend"></div>
+		</div>
+
+		<script>
+			var countdown_clock = document.getElementById('countdown-clock');
+			var countdown = document.getElementById('countdown');
+			var todaysDate = new Date();
+
+			var theDays = [
+				'Monday',
+				'Tuesday',
+				'Wednesday',
+				'Thursday',
+				'Friday',
+				'Saturday',
+				'Sunday',
+			];
+			var dayOfWeek = document.getElementById('dayOfWeek');
+			var theWeekend = document.getElementById('theWeekend');
+			for (i = 0; i <= theDays.length; i++) {
+				if (i + 1 === todaysDate.getDay()) {
+					dayOfWeek.innerHTML = theDays[i];
+				}
+				if (todaysDate.getDay() >= 5) {
+					theWeekend.innerHTML = "It's the weekend!!!";
+				} else if (todaysDate.getDay() <= 5)
+					theWeekend.innerHTML = 'Today is only ' + dayOfWeek.innerHTML + '.';
+			}
+
+			var theMonths = [
+				'January',
+				'February',
+				'March',
+				'April',
+				'May',
+				'June',
+				'July',
+				'September',
+				'October',
+				'November',
+				'December',
+			];
+			var monthofYear = document.getElementById('theDate');
+			for (i = 0; i <= theMonths.length; i++) {
+				if (i === todaysDate.getMonth()) {
+					aMonth = theMonths[i];
+				}
+			}
+			monthofYear.innerHTML = `${aMonth} ${todaysDate.getDate()} ${todaysDate.getFullYear()}`;
+
+			ivanasClock.theWeekend = document.getElementById('theWeekend');
+			ivanasClock.header = document.getElementById('header');
+			ivanasClock.container = document.getElementById('container');
+			ivanasClock.format = document.getElementById('format');
+			ivanasClock.clockHolder = document.getElementById('clock');
+			ivanasClock.countDownClock = document.getElementById('countdown-clock');
+			ivanasClock.chooseDay = document.getElementById('chooseDay');
+			ivanasClock.chooseMonth = document.getElementById('chooseMonth');
+			ivanasClock.chooseYear = document.getElementById('chooseYear');
+			ivanasClock.submitBtn = document.getElementById('submitDate');
+			ivanasClock.init();
+		</script>
+	</body>
+</html>
